@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>Encuesta de Satisfaccion a Usuario</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		 <script src="../js/jQuery.js"></script>
+		 
+        <script type="text/JavaScript" src="../js/Sesiones.js"></script> 	
+		<script type="text/JavaScript" src="../js/Funciones.js"></script> 				
+		<script type="text/JavaScript" src="../js/Menu.js"></script>
+		<script type="text/JavaScript" src="./../js/operacion.js"></script>
+		<script type="text/JavaScript" src="./../js/Encuesta.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+   		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="../js/materialize.min.js"></script>
+    
+		<!--<script src="js/Reporte.js"></script> -->
+    </head>
+	<body onload="getInfoSesion(); validarSesion1();">	
+     
+	 <!--lista desplegable ayuda-->
+			  <ul id="dropdown1" class="dropdown-content">
+				<li><a href="#!">Manual</a></li>
+				  <li><a href="#!">Acerca de</a></li>
+				  <li class="divider"></li> 
+				</ul>
+				<ul id="dropdown2" class="dropdown-content">
+				<li><a href="#!">Manual</a></li>
+				  <li><a href="#!">Acerca de</a></li>
+				  <li class="divider"></li> 
+				</ul>
+				
+		<nav class="nav-extended blue">
+		<!--menu superir-->
+			<div class="nav-wrapper">
+			  <a href="../index.html" class="brand-logo left">HOTEL MISTICK</a>
+			  <a class="brand-logo center">Consultar</a>
+			  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			  <ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a id="closeSession" href="#">Cerrar Sesion</a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Ayuda<i class="material-icons right">arrow_drop_down</i></a></li>
+   
+			  </ul>
+			  <!--menu movil-->
+			  <ul class="side-nav" id="mobile-demo">
+				<li><a id="closeSession" href="#">Cerrar Sesion</a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown2">Ayuda<i class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
+			</div>
+			<!--menu mitad-->
+			<div class="nav-content" >
+			  <ul class="tabs tabs-transparent">
+				<li class="tab"><a href="#test1">Reserva</a></li>
+				<li class="tab"><a href="#test2">Factura</a></li>
+				
+			  </ul>
+			</div>
+			<!--fin menu-->
+		  </nav>
+							<div class="row">
+		<div class="row col s12 center">
+		<div class="row col s2"></div>
+		<form method="post" name="formUsuario" class="col s8">
+			<div class="row"><h3 CLASS="center">Encuesta<h3></div>
+		 
+		  <div>
+						<select id="satisfaccion">
+							<option value="" disabled selected>Satisfaccion</option>
+							<option value="1">1: -Muy mala</option>
+							<option value="2">2: -Mala</option>
+							<option value="3">3: -Normal</option>
+							<option value="4">4: -Buena</option>
+							<option value="5">5: -Excelente</option>
+						</select>
+						<label>Selecione del 1 al 5 que tan satisfecho esta con el servicio<label>
+						
+					</div>
+					<div>
+						<select id="hospedaje">
+							<option value="" disabled selected>Hospedaje</option>
+							<option value="1">1: -Muy mal</option>
+							<option value="2">2: -Mal</option>
+							<option value="3">3: -Normal</option>
+							<option value="4">4: -Bueno</option>
+							<option value="5">5: -Excelente</option>
+						</select>
+						<label>Selecione del 1 al 5 que como esta con el hospedaje en hotel<label>
+						
+					</div>
+					<div>
+						<select id="oferta">
+							<option value="" disabled selected>Oferta</option>
+							<option value="1">1: -Muy mala</option>
+							<option value="2">2: -Mala</option>
+							<option value="3">3: -Normal</option>
+							<option value="4">4: -Buena</option>
+							<option value="5">5: -Excelente</option>
+						</select>
+						<label>Selecione del 1 al 5 como ve las ofertas del Hotel<label>
+						
+					</div>
+					<div>
+						<select id="habitacion">
+							<option value="" disabled selected>Habitaciones</option>
+							<option value="1">1: -Muy mala</option>
+							<option value="2">2: -Mala</option>
+							<option value="3">3: -Normal</option>
+							<option value="4">4: -Buena</option>
+							<option value="5">5: -Excelente</option>
+						</select>
+						<label>Selecione del 1 al 5 que tan satisfecho esta con las habitaciones<label>
+						
+					</div>
+					<div>
+						<select id="limpieza">
+							<option value="" disabled selected>Liempieza</option>
+							<option value="1">1: -Muy mala</option>
+							<option value="2">2: -Mala</option>
+							<option value="3">3: -Normal</option>
+							<option value="4">4: -Buena</option>
+							<option value="5">5: -Excelente</option>
+						</select>
+						<label>Selecione del 1 al 5 que tan Lispio en general el Hotel<label>
+						
+					</div>
+					<div>
+						<div>
+							<textarea  id="recomendacion" class="materialize-textarea" data-length="200" placeholder="Escriba una recomendacion"></textarea>
+						
+							<label>Escriba una recomendacion<label>
+							</div>
+					</div>
+					
+							
+					<div class="waves-effect waves-light btn-large blue" id="btnEncuesta"><i class="material-icons right">input</i>Enviar</div>							
+					<div class="waves-effect waves-light btn-large white"><a href="../menu/menuConsulta.html">menu Consulta<i class="material-icons center">skip_previous</i></a></div>
+				
+			
+		</form>
+	</div>
+   </div>
+	   
+	   <hr>
+	   <div id="contenido" align="center"></div>
+	<hr>
+	</body>
+	</html>

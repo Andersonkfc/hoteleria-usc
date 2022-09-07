@@ -1,0 +1,109 @@
+<!---->
+<!DOCTYPE html>
+  <!---->
+  <html>
+    <head>
+		<title>Registro de Habitaciones</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<!--css materialize-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="./../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		
+		
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!--js materialize-->
+		<script src="./../js/materialize.js"></script>
+		<script type="text/JavaScript" src="./../js/Sesiones.js"></script> 	
+		<script type="text/JavaScript" src="./../js/Funciones.js"></script> 				
+		<script type="text/JavaScript" src="./../js/Menu.js"></script>
+		<script type="text/JavaScript" src="./../js/reportes.js"></script>
+		<script src="./../js/habitacion.js"></script>
+	</head>
+	<body onload="getInfoSesion(); validarSesion1();">
+		<div class="row col s12 center">
+				<h2>Registro de Habitaciones</h2>
+					<div class="row col s3"></div>
+					<form class="col s6">
+						<div>
+							<input id="id_habitacion" type="number">
+							<label for="id_habitacion">Numero de Habitacion</label>
+						</div>
+						
+						<div>
+							<select id="estado">
+							 <option value="" disabled selected>Selecione Disponibilidad</option>
+							 <option value="disponible">Disponible</option>
+							 <option value="ocupado">Ocupada</option> 
+							</select>
+							<label for="estado">Disponibilidad</label>
+						</div>
+							
+						<div>
+							<select id="tipoHabitacion">
+								 <option value="" disabled selected>Selecione el tipo de Suite</option>
+								 <option value="1">Suite presidencial</option>
+								 <option value="2">Suite Premium</option>
+								 <option value="3">Suite Junio</option>
+								 <option value="3">Suite individual</option>
+							</select>
+						</div>
+							<div>
+								<select id="hotel_id_hotel">
+								 <option value="" disabled selected>Selecione el Hotel</option>
+								 <option value="1">Hotel Mistick</option>
+								 
+							</select>
+							</div>
+							
+							<hr class="colorgraph">
+							<div class="row center">
+							<!--botont reservar-->
+									<div class="col s4">
+										<div class="waves-effect waves-light btn-large blue" id="btnHabitacion"><i class="material-icons right">input</i>Reservar</div>							
+									</div>
+							
+									<div class="col s4">
+										<div class="waves-effect waves-light btn-large white"><a href="../menu/menuAdmin.html">menu Admin<i class="material-icons center">skip_previous</i></a></div>
+			
+									</div>
+									<div class="col s4">
+										<div class="waves-effect waves-light btn-large white"><a href="#" onclick="generarHabitacionesExel();">Descargar Excel Habitaciones<i class="material-icons center">skip_previous</i></a></div>
+			
+									</div>
+							</div>
+					</form>
+					
+				</div>	
+				<div class="container">
+				<div class="row">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>
+									# habitacion
+								</th>
+								<th>
+									Disponibilidad
+								</th>
+								<th>
+									Tipo Habitacion
+								</th>
+								<th>
+									Hotel
+								</th>
+								
+							</tr>	
+						</thead>
+						<tbody id="TableHabitacion">
+
+						</tbody>
+					</table>
+				</div>
+				</div>
+			
+	<script src="./../js/operacion.js"></script>
+	
+	<hr>
+    <div id="contenido" align="center"></div>
+   </body>
+</html>

@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Regitro de Usuario</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		 <script src="js/jQuery.js"></script>
+        <script src="js/Proceso.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+   		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+    
+		<!--<script src="js/Reporte.js"></script> -->
+    </head>
+	<body>
+	<nav class="blue" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">HOTEL MISTICK</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="iniciarSesion.php">Iniciar ses&iacute;on</a></li>
+		<li><a href="registroUsuario.html">registrarse</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="iniciarSesion.php">Iniciar sesi&iacute;on</a></li>
+		<li><a "registroUsuario.html">Registrarse</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+		<div><CENTER> <h3> REGISTRO USUARIO</CENTER><H3></DIV>
+		
+		
+		<div class="row col s18" align="center">
+		<div class="col s3"></div>
+		<div class="col l6">
+			<form class="col l6">
+				<div class="row" align="center">
+					<div >
+						<input type="number" id="txtCedula" data-length="11" class="validate" autofocus>
+						<label for="txtCedula">Cedula</label>
+					</div>
+					<div >
+						<input type="password" class="validate" id="txtClave" class="validate" required>
+						<label for="txtClave">Clave</label>
+					</div>
+					<div >
+						<input type="password" id="txtClave" class="validate" required>
+						<label for="txtClave1">Confimacion de Contrase&ntilde;a</label>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div>
+						<input type="text" id="txtNombre" class="validate" required>
+						<label for="txtNombre">Nombre</label>	
+					</div>
+					<div>	
+						<input type="text" name="txtApellido" id="txtApellido" class="validate"> 
+						<label for="txtApellido">Apellido</label>
+					</div>
+					<div>
+						<input type="text"  id="txtDireccion" placeholder="Escriba su Direreccion Aqui" class="validate"></td>
+						<label for="txtDireccion">Direccion</label>
+					</div>
+					<div>
+						<input type="text" id="txtTelefono" class="validate">
+						<label for="txtTelefono">Telefono</label>
+					</div>
+					<div>
+						<input type="email" id="txtEmail" class="validate" required>
+						<label for="txtEmail">Email</label>
+						
+					</div>
+					<div>
+						<input type="text" id="txtCiudad" class="validate" required>
+						<label for="txtCiudad">Ciudad</label></td>
+					</div>
+						
+					<div>
+						<input type="text" name="txtPais" id="txtPais" class="validate" required>
+						<label for="txtPais">Pais</label>
+					</div>
+				
+				</DIV> 
+				
+				
+		</form>
+		<form class="col s6">
+			<div class="row">
+				
+					<div>
+						<input type="text" id="txtTarjeta" class="validate" required>
+						<label for="txtTarjeta">Numero de tarjeta</label></td>
+					</div>
+					<div>
+						<input type="text"  id="txtNombre" class="validate" required>
+						<label for="txtNombre">Nombre del titlular</label></td>
+					</div>
+				</div>
+				<div >
+					<a class="waves-effect waves-light btn-large blue" id="btnCalcular" >Submit
+					<i class="material-icons right">send</i>
+					</a>
+								
+				</div>
+		</form>
+		</div>
+		<div class="col s3"></div>
+	</div>
+	</body> 
+	  
+</html>						

@@ -1,0 +1,191 @@
+  <!DOCTYPE html>
+  <!---->
+  <html>
+    <head>
+		<title>Menu Administrador</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import procesos-->
+		<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+		<script type="text/JavaScript" src="../js/Sesiones.js"></script> 	
+		<script type="text/JavaScript" src="../js/Funciones.js"></script> 				
+		<script type="text/JavaScript" src="../js/Menu.js"></script>
+		
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--css materialize-->
+		<link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<!--JQUERY-->
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!--js materialize-->
+		<script src="../js/materialize.js"></script>
+		<!--js menus-->
+		<script src="../js/init.js"></script>
+		<script src="./../js/operacion.js"></script>
+		<script src="./../js/reportes.js"></script>
+		
+		<script src="./../js/procesoHotel.js"></script>
+		<script src="./../js/ReporteReserva.js"></script>
+        
+		<script src="./../js/proceso.js"></script>
+		<script src="./../js/ReporteUser.js"></script>
+        
+	</head>
+	
+     <body onload="getInfoSesion(); validarSesion();">	
+      <!--lista desplegable ayuda-->
+	  <ul id="dropdown1" class="dropdown-content">
+		<li><a href="../utils/manualUsuario.pdf">Manual</a></li>
+		  <li><a href="#!">Acerca de</a></li>
+		  <li class="divider"></li> 
+		</ul>
+		<ul id="dropdown2" class="dropdown-content">
+		<li><a href="../utils/manualUsuario.pdf">Manual</a></li>
+		  <li><a href="#!">Acerca de</a></li>
+		  <li class="divider"></li> 
+		</ul>
+		<ul id="dropdown3" class="dropdown-content">
+			<li><center>XML Usuario</center>
+				<li><a href="../xmls/leerXMLuser.php">leer XML usuario</a>
+				<li><a href="../xmls/generalXMLuser.php">Generar XML Usuario</a></li>
+				<li><a href="../xmls/Usuarios.xml">Ver XML usuario</a></li>
+				<li class="divider"></li>
+			</li>
+			<li><center>XML Reservas</center>
+				<li><a href="../xmls/leerXMLreserva.php">leer XML Reservas</a>
+				<li><a href="../xmls/genertaXMLreserva.php">Generar XML Reservas</a></li>
+				<li><a href="../xmls/Reserva.xml">Ver XML reservas</a></li>
+				<li class="divider"></li>
+			</li>
+		</ul>
+		<ul id="dropdown4" class="dropdown-content">
+		<li><a href="#!" onclick="generarExcel();">Tipo de Habitacion</li></a>
+		  <li><a href="#!" onclick="generarHabitacionesExel();">Habitaciones</a></li>
+		  <li class="divider"></li> 
+		</ul>
+     <!--menu-->
+		<nav class="nav-extended blue">
+		<!--menu superir-->
+			<div class="nav-wrapper">
+			  <a href="../index.html" class="brand-logo left">HOTEL MISTICK</a>
+			  <a class="brand-logo center">Administrador</a>
+			  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			  <ul id="nav-mobile" class="right hide-on-med-and-down">
+				
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown3">Reportes XML<i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown4">Reportes EXCEL<i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a id="closeSession" href="#">Cerrar Sesion</a></li>
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Ayuda<i class="material-icons right">arrow_drop_down</i></a></li>
+				
+			  </ul>
+			  <!--menu movil-->
+			  <ul class="side-nav" id="mobile-demo">
+				
+				<li><a class="dropdown-button" href="#!" data-activates="dropdown2">Ayuda<i class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
+			</div>
+			<!--menu mitad-->
+			<div class="nav-content" >
+			  <ul class="tabs tabs-transparent">
+				<li class="tab"><a href="#test1">Reserva</a></li>
+				<li class="tab"><a href="#test2">Factura</a></li>
+				
+				
+			  </ul>
+			  
+			</div>
+			<!--menu inferir-->
+			  <nav>
+				<div class="nav-wrapper blue">
+				 
+				  <ul class="left hide-on-med-and-down">
+					<li><a href="../frm/filtroReservaUser">Busqueda Usuarios</a></li>
+					<li><a href="../frm/frmRegistoAdmin.html">Registrar Administrador</a></li>
+					<li><a href="../frm/frmTipoHabitacion.html">Registrar Nueva Habitacion</a></li>
+					<li><a href="../frm/filtroEncuesta.php">Encuestas</a></li>
+					
+				 </ul>
+				</div>
+			  </nav>
+        
+			<!--fin menu-->
+		  </nav>
+		  <!--contenido-->
+		  <div id="test1">
+			
+			<div class="row col s12">
+			<div class="row col s3"></div>
+			<form class="col s6">
+					<div class="input-field">
+						<input type="number" id="id_user" data-length="1" placeholder="Cedula">
+						<label for="id_user">Cedula</label>
+					</div>
+					
+					<div class="input-field">
+						<input type="number" id="catidad_persona" data-length="1" placeholder="Numero de huspedes">
+						<label for="catidad_persona">Nuemero de personas</label>
+					</div>
+					<div id="date-picker" class="section scrollspy">
+						<label for="fecha_inicio">Fecha inicio de Reserva</label>
+						<input id="fecha_inicio" type="text" placeholder="DD-MM-YYYY">
+					</div>
+					<div id="date-picker" class="section scrollspy">
+						<label for="fecha_fin">Fehac Fin de Reserva</label>
+						<input id="fecha_fin" type="text" placeholder="DD-MM-YYYY">
+					</div>
+					<div>
+						<select id="tipoHabitacion">
+							 <option value="" disabled selected>Selecione el tipo de Suite</option>
+							 <option value="2">Suite presidencial</option>
+							 <option value="3">Suite Premium</option>
+							 <option value="4">Suite Junior</option>
+							 <option value="1">Suite individual</option>
+						</select>
+					</div>
+					<hr class="colorgraph">
+					<div class="row center">
+					<!--botont reservar-->
+							<div class="col s4">
+								<div class="waves-effect waves-light btn-large blue" id="btnReservar"><i class="material-icons right">input</i>Reservar</div>							
+							</div>
+					<!--botont buscar-->
+							<div class="col s4">
+								<div class="waves-effect waves-light btn-large white" ><span class="blue-text text-white"><a href="../frm/filtroReserva.php"><i class="medium material-icons right">search</i>Buscar</div></a></span>					
+							</div>
+					<!--botont limpiar-->	
+							<div class="col s4">
+								<div class="waves-effect waves-light btn-large blue" id="btnLimpiar"><i class="material-icons right">clear</i>Limpiar</div>							
+							</div> 
+							
+					</div>
+			
+			
+			</form>
+			
+		</div>	
+			
+	<script src="./../js/procesoHotel.js"></script>
+	<script src="./../js/operacion.js"></script>
+    <script src="./../js/habitacion.js"></script>
+ 		
+		<div class="container">
+			
+	
+	
+		  </div>
+		  <div id="test4" class="col s12">Test 2</div>
+		  <div id="test2" class="col s12">Test 2
+		  <tbody id="TableHabitacion">
+		  </tbody>
+			</div>
+		  <div id="test3" class="col s12">Test 3</div>
+		  
+		
+		  
+		<hr>
+		<!--usuario-->
+		<div id="contenido" align="center"></div>
+		<hr>
+	</body>
+	
+  </html>
